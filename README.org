@@ -1,0 +1,10 @@
+#+title: EDG Highlights for NPPS
+
+My (biased) take on highlights from EDG that might be interesting to NPPS in reverse chronological order.
+
+* [2019-11-15 Fri]
+
+- [[https://indico.bnl.gov/event/6383/contributions/32818/attachments/25515/38251/srv-dune-fd-daq-bv.pdf][DUNE DAQ at SRV]] describes the prototype streaming trigger/readout software and some results of [[https://github.com/brettviren/zperfmq][ZeroMQ performance]] on 100 Gbps ATLAS/DUNE/sPHENIX LDRD test network.
+
+- [[https://www.bnl.gov/dmo2019/][Module of oprotunity]] workshop at BNL discussed what DUNE might put in as the fourth of four far detector modules.  Mostly physics and detector related.   [[https://indico.fnal.gov/event/21535/contribution/22/material/slides/0.pptx][Xin Qian's talk]] shows many Wire-Cell results and includes some new ideas on LArTPC signal processing including early promising results using deep learning by our post-doc Haiwang Yu.
+
