@@ -1,8 +1,13 @@
 #+title: EDG Highlights for NPPS
 
-My (biased) take on highlights from EDG that might be interesting to NPPS in reverse chronological order.
+This page attempts to collect highlights of software-related activity
+by EDG members that may be interesting to NPPS.  Below are weekly
+summaries.  Less frequently updated but more focused updates on
+Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News blog]].
 
-* [2019-11-15 Fri]
+* Weekly highlights
+
+** [2019-11-15 Fri]
 
 - [[https://indico.bnl.gov/event/6383/contributions/32818/attachments/25515/38251/srv-dune-fd-daq-bv.pdf][DUNE DAQ at SRV]] describes the prototype streaming trigger/readout software and some results of [[https://github.com/brettviren/zperfmq][ZeroMQ performance]] on 100 Gbps ATLAS/DUNE/sPHENIX LDRD test network.
 
