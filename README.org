@@ -13,3 +13,7 @@ Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News
 
 - [[https://www.bnl.gov/dmo2019/][Module of oprotunity]] workshop at BNL discussed what DUNE might put in as the fourth of four far detector modules.  Mostly physics and detector related.   [[https://indico.fnal.gov/event/21535/contribution/22/material/slides/0.pptx][Xin Qian's talk]] shows many Wire-Cell results and includes some new ideas on LArTPC signal processing including early promising results using deep learning by our post-doc Haiwang Yu.
 
+- Couple of notes posted
+  - [[http://docs.dunescience.org/cgi-bin/ShowDocument?docid=16973][DUNE DocDB 16973]] some unfinished notes on "observability" systems of possible interest for DUNE FD DAQ.
+  - [[http://docs.dunescience.org/cgi-bin/ShowDocument?docid=16976][DUNE DocDB 16976]] write up of performance evaluation of ZeroMQ on 100 Gbps using ZperfMQ.
+
