@@ -16,6 +16,15 @@ Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News
 
   to be led by Paul Laycock and Andrew Norman (of FNAL).
 
+- Report on Wire-Cell Toolkit to LArSoft Coordination meeting by
+  Haiwang Yu
+
+  https://indico.fnal.gov/event/22501/contribution/1/material/slides/0.pdf
+
+  Good overview of WCT's data flow programming paradigm, some of the
+  algorithms, initial look at ROOT vs HDF5, single/multi-threading
+  comparisong, memory usage, identified lock bottleneck in FFTW3.
+
 - DUNE FD DAQ began technical discussions about how to handle
   "observability" with initial focus on metrics.  Two presentations
   are here https://indico.fnal.gov/event/22481/.  Of particular note
