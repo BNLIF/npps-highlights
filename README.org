@@ -6,9 +6,21 @@ summaries.  Less frequently updated but more focused updates on
 Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News blog]].
 
 * Weekly highlights
+
 ** [2019-11-22 Fri]
 
-- DUNE FD DAQ began technical discussions about how to handle "observability" with initial focus on metrics.  Two presentations are here https://indico.fnal.gov/event/22481/.  Of particular note to NPPS, I mentioned Sergey Padolski's BDT work for Panda as something we should look into more.
+- DUNE computing issued a charge for a "DUNE Software Framework
+  Requirements Task Force":
+
+  https://indico.fnal.gov/event/22493/contribution/9/material/slides/3.pdf
+
+  to be led by Paul Laycock and Andrew Norman (of FNAL).
+
+- DUNE FD DAQ began technical discussions about how to handle
+  "observability" with initial focus on metrics.  Two presentations
+  are here https://indico.fnal.gov/event/22481/.  Of particular note
+  to NPPS, I mentioned Sergey Padolski's BDT work for Panda as
+  something we should look into more.
 
 ** [2019-11-15 Fri]
 
