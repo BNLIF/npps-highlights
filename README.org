@@ -7,6 +7,51 @@ Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News
 
 * Weekly highlights
 
+** [2019-12-06 Fri]
+
+- BV and Haiwang met with CSI (Meifeng, Kwangmin, Zhihua) yesterday to
+  sync up about recent HEP-CCE activities as well as Wire-Cell
+  parallelizing/optimizing.  BV was asked to participate in CCE-IOS
+  (I/O + storage, meeting next Friday), Meifeng is in CCE-PPS
+  (portable parallelism, meeting next Monday) and asked BV to
+  participate in that as well.  
+
+  Haiwang reported on his recent work on Wire-Cell's component-level
+  parallel execution engine based on TBB.  Single threaded jobs are
+  just above 1 GB, multi-threaded jobs with 1 pipeline for each of 6
+  ProtoDUNE APAs achieves near 600% CPU usage in those pipelines and
+  uses less than 3 GB.  
+
+  Haiwang also presented his work on improvements on the quality of
+  the "region-of-interest" half of Wire-Cell signal processing via
+  machine learning techniques based on image segmentation.  Evaluation
+  is based on visually checking ROI results and is clearly better than
+  the current heuristic based ROI finding in terms of completeness and
+  spatial resolution.  Kwangmin remarked on the relatively low number
+  of training epochs used (5) and Haiwang will investigate how results
+  might change as a function of this number.
+
+- A new project ([[https://github.com/brettviren/zio][zio]]) was started as a basis for solutions of several
+  similar problems but in rather different spaces.  Some additional
+  info is in the README and updates will be provided as the project
+  develops.
+
+- The [[https://github.com/brettviren/tpquery][TP Query]] package for DUNE FD DAQ reached an initial milestone of
+  usability.  It provides a ZeroMQ based streamed buffer query system
+  based on interval trees and applied to providing a database of
+  recent self-trigger information for ProtoDUNE.  It was tested using
+  PTMP's "replay" mechanism with trigger messages dumped from
+  ProtoDUNE.  It sustains sufficient throughput for buffers of a few
+  seconds deep for the aggregate of 1 APA (~80kHz of intervals) but
+  will slow beyond that (the relevant interval tree operations are
+  N*log(N)).  This is likely sufficient as-is but at least one
+  approach exists to combat this slowdown if longer buffers are
+  needed.  It's unclear when this might be tested "live" at ProtoDUNE
+  but it was recently learned that PDSP will run into April.
+  Unidentified artdaq developer effort is needed if this buffer query
+  is to lead to data sent to offline files but a quicker "live" test
+  can be developed entirely using PTMP based code.
+
 ** [2019-11-22 Fri]
 
 - DUNE computing issued a charge for a "DUNE Software Framework
