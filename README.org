@@ -7,6 +7,26 @@ Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News
 
 * Weekly highlights
 
+** [2019-12-13 Fri]
+
+- DUNE DAQ is discussing software build and other software management
+  issues.  FNAL is trying to replace their long standing "augmented"
+  CMake package-level build system + their suite of shell scripted
+  meta build system with a new "augmented" CMake build system + Spack.
+  (editorial comment: the latter is welcome, but the former is still a
+  core mistake that limits the portability of code that employs the
+  "augmented" CMake package build.)
+
+- The ZIO package started last week has reached a maturity to go on to
+  the next step of seeing how to integrate it into Wire-Cell toolkit.
+  A likely problem was uncovered in mixing Zio's ZeroMQ with WCT's MT
+  graph execution engine based on TBB "flow graph": in general, ZMQ
+  sockets can not be sent across thread boundaries without hitting
+  undefined behavior.  Work is still ongoing to understand and
+  demonstrate the problem but it may be a show stopper in mixing these
+  two technologies.  Any input on this topic from the group is very
+  welcome.
+
 ** [2019-12-06 Fri]
 
 - BV and Haiwang met with CSI (Meifeng, Kwangmin, Zhihua) yesterday to
