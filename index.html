@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-30 Thu 15:29 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EDG Highlights for NPPS</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Brett Viren" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="org.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">EDG Highlights for NPPS</h1>
+<p>
+This page attempts to collect highlights of software-related activity
+by EDG members that may be interesting to NPPS.  Below are weekly
+summaries.  Less frequently updated but more focused updates on
+Wire-Cell can be found in the <a href="https://wirecell.github.io/news/">Wire-Cell News blog</a>.
+</p>
+
+<div id="outline-container-orgbd75e08" class="outline-2">
+<h2 id="orgbd75e08"><span class="section-number-2">1</span> <span class="timestamp-wrapper"><span class="timestamp">[2020-01-31 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Xmas/New Years and general laziness mean these updates cover more than
+one week of activity.
+</p>
+
+<ul class="org-ul">
+<li>Wire-Cell Toolkit release branch 0.13.x made (Haiwang) with release
+<a href="https://github.com/WireCell/wire-cell-toolkit/releases/tag/0.13.0">0.13.0</a> and quickly following <a href="https://github.com/WireCell/wire-cell-toolkit/releases/tag/0.13.1">0.13.1</a> which just removed some cruft
+unintentionally left in.  They are the first release after moving
+the toolkit source to a mono-repo assembled from the old individual
+repos using <a href="https://github.com/ingydotnet/git-subrepo">git subrepo</a> and includes many important algorithm
+additions and improvements not the least of which is bringing back
+support for multi-threaded graph execution and support for deep
+network machine learning based signal-ROI finding.  More details
+listed in the 0.13.0 release notes.
+
+<ul class="org-ul">
+<li>Tangentially unrelated, the LArSoft source code management has
+moved from Fermilab Redmine to <a href="https://github.com/larsoft">https://github.com/larsoft</a>.  It
+now follows a fork+PR-based contribution model.</li>
+</ul></li>
+
+<li><a href="https://github.com/brettviren/zio">ZIO</a> has matured greatly since last update but still has more to
+come.  Since last highlight, it has gained an implementation of the
+<a href="http://zguide.zeromq.org/page:all#toc211">"credit based flow control"</a> protocol described in the ZeroMQ guide.
+However, ZIO flow uses SERVER/CLIENT sockets (in draft) instead of
+ROUTER/DEALER in order to assure thread safety if/when sockets are
+utilized from changing threads (as will happen with TBB based
+multi-thread graph exeuction).  ZIO now includes both C++ and Python
+implementation of the major patterns (<code>message</code>, <code>peer</code>, <code>node</code>, <code>port</code> and
+<code>flow</code>).  A documentation website for <a href="https://brettviren.github.io/zio/">ZIO</a> was started.</li>
+
+<li>The WCT subpackage <a href="https://github.com/brettviren/wire-cell-zpb">ZPB</a> was started.  It provides the WCT end of a
+ZIO flow.  It also has a documentation home page: <a href="https://brettviren.github.io/wire-cell-zpb/">ZPB</a>.  Current ZPB
+functionality includes extracting WCT "depo" and "frame" data types
+from components running inside the single or multi-threaded WCT
+graph execution engines, conversion to protobuf (the "PB" in "ZPB")
+objects in ZIO messages, transferring them over ZIO/ZeroMQ (the "Z"
+in "ZPB"), receiving the message in a broker and saving to HDF5.
+Reading/injecting back into the graph is nearly complete.  The
+broker is implemented generically in Python in the ZIO Python
+package and ZPB provides a domain-specific "broker factory plugin"
+which itself is plugable for both the message payload schema (but
+limited to just protobuf format for now) and the file format (HDF5
+implemented, ROOT maybe next).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgac884bb" class="outline-2">
+<h2 id="orgac884bb"><span class="section-number-2">2</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-13 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>DUNE DAQ is discussing software build and other software management
+issues.  FNAL is trying to replace their long standing "augmented"
+CMake package-level build system + their suite of shell scripted
+meta build system with a new "augmented" CMake build system + Spack.
+(editorial comment: the latter is welcome, but the former is still a
+core mistake that limits the portability of code that employs the
+"augmented" CMake package build.)</li>
+
+<li>The ZIO package started last week has reached a maturity to go on to
+the next step of seeing how to integrate it into Wire-Cell toolkit.
+A likely problem was uncovered in mixing Zio's ZeroMQ with WCT's MT
+graph execution engine based on TBB "flow graph": in general, ZMQ
+sockets can not be sent across thread boundaries without hitting
+undefined behavior.  Work is still ongoing to understand and
+demonstrate the problem but it may be a show stopper in mixing these
+two technologies.  Any input on this topic from the group is very
+welcome.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb38c94f" class="outline-2">
+<h2 id="orgb38c94f"><span class="section-number-2">3</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-06 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><p>
+BV and Haiwang met with CSI (Meifeng, Kwangmin, Zhihua) yesterday to
+sync up about recent HEP-CCE activities as well as Wire-Cell
+parallelizing/optimizing.  BV was asked to participate in CCE-IOS
+(I/O + storage, meeting next Friday), Meifeng is in CCE-PPS
+(portable parallelism, meeting next Monday) and asked BV to
+participate in that as well.  
+</p>
+
+<p>
+Haiwang reported on his recent work on Wire-Cell's component-level
+parallel execution engine based on TBB.  Single threaded jobs are
+just above 1 GB, multi-threaded jobs with 1 pipeline for each of 6
+ProtoDUNE APAs achieves near 600% CPU usage in those pipelines and
+uses less than 3 GB.  
+</p>
+
+<p>
+Haiwang also presented his work on improvements on the quality of
+the "region-of-interest" half of Wire-Cell signal processing via
+machine learning techniques based on image segmentation.  Evaluation
+is based on visually checking ROI results and is clearly better than
+the current heuristic based ROI finding in terms of completeness and
+spatial resolution.  Kwangmin remarked on the relatively low number
+of training epochs used (5) and Haiwang will investigate how results
+might change as a function of this number.
+</p></li>
+
+<li>A new project (<a href="https://github.com/brettviren/zio">zio</a>) was started as a basis for solutions of several
+similar problems but in rather different spaces.  Some additional
+info is in the README and updates will be provided as the project
+develops.</li>
+
+<li>The <a href="https://github.com/brettviren/tpquery">TP Query</a> package for DUNE FD DAQ reached an initial milestone of
+usability.  It provides a ZeroMQ based streamed buffer query system
+based on interval trees and applied to providing a database of
+recent self-trigger information for ProtoDUNE.  It was tested using
+PTMP's "replay" mechanism with trigger messages dumped from
+ProtoDUNE.  It sustains sufficient throughput for buffers of a few
+seconds deep for the aggregate of 1 APA (~80kHz of intervals) but
+will slow beyond that (the relevant interval tree operations are
+N*log(N)).  This is likely sufficient as-is but at least one
+approach exists to combat this slowdown if longer buffers are
+needed.  It's unclear when this might be tested "live" at ProtoDUNE
+but it was recently learned that PDSP will run into April.
+Unidentified artdaq developer effort is needed if this buffer query
+is to lead to data sent to offline files but a quicker "live" test
+can be developed entirely using PTMP based code.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org44138bc" class="outline-2">
+<h2 id="org44138bc"><span class="section-number-2">4</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-22 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><p>
+DUNE computing issued a charge for a "DUNE Software Framework
+Requirements Task Force":
+</p>
+
+<p>
+<a href="https://indico.fnal.gov/event/22493/contribution/9/material/slides/3.pdf">https://indico.fnal.gov/event/22493/contribution/9/material/slides/3.pdf</a>
+</p>
+
+<p>
+to be led by Paul Laycock and Andrew Norman (of FNAL).
+</p></li>
+
+<li><p>
+Report on Wire-Cell Toolkit to LArSoft Coordination meeting by
+Haiwang Yu
+</p>
+
+<p>
+<a href="https://indico.fnal.gov/event/22501/contribution/1/material/slides/0.pdf">https://indico.fnal.gov/event/22501/contribution/1/material/slides/0.pdf</a>
+</p>
+
+<p>
+Good overview of WCT's data flow programming paradigm, some of the
+algorithms, initial look at ROOT vs HDF5, single/multi-threading
+comparisong, memory usage, identified lock bottleneck in FFTW3.
+</p></li>
+
+<li>DUNE FD DAQ began technical discussions about how to handle
+"observability" with initial focus on metrics.  Two presentations
+are here <a href="https://indico.fnal.gov/event/22481/">https://indico.fnal.gov/event/22481/</a>.  Of particular note
+to NPPS, I mentioned Sergey Padolski's BDT work for Panda as
+something we should look into more.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcfc3100" class="outline-2">
+<h2 id="orgcfc3100"><span class="section-number-2">5</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-15 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><a href="https://indico.bnl.gov/event/6383/contributions/32818/attachments/25515/38251/srv-dune-fd-daq-bv.pdf">DUNE DAQ at SRV</a> describes the prototype streaming trigger/readout software and some results of <a href="https://github.com/brettviren/zperfmq">ZeroMQ performance</a> on 100 Gbps ATLAS/DUNE/sPHENIX LDRD test network.</li>
+
+<li><a href="https://www.bnl.gov/dmo2019/">Module of oprotunity</a> workshop at BNL discussed what DUNE might put in as the fourth of four far detector modules.  Mostly physics and detector related.   <a href="https://indico.fnal.gov/event/21535/contribution/22/material/slides/0.pptx">Xin Qian's talk</a> shows many Wire-Cell results and includes some new ideas on LArTPC signal processing including early promising results using deep learning by our post-doc Haiwang Yu.</li>
+
+<li>Couple of notes posted
+<ul class="org-ul">
+<li><a href="http://docs.dunescience.org/cgi-bin/ShowDocument?docid=16973">DUNE DocDB 16973</a> some unfinished notes on "observability" systems of possible interest for DUNE FD DAQ.</li>
+<li><a href="http://docs.dunescience.org/cgi-bin/ShowDocument?docid=16976">DUNE DocDB 16976</a> write up of performance evaluation of ZeroMQ on 100 Gbps using ZperfMQ.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Brett Viren</p>
+<p class="date">Created: 2020-01-30 Thu 15:29</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
