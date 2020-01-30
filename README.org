@@ -7,6 +7,49 @@ Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News
 
 * Weekly highlights
 
+** [2020-01-31 Fri]
+
+Xmas/New Years and general laziness mean these updates cover more than
+one week of activity.
+
+- Wire-Cell Toolkit release branch 0.13.x made (Haiwang) with release
+  [[https://github.com/WireCell/wire-cell-toolkit/releases/tag/0.13.0][0.13.0]] and quickly following [[https://github.com/WireCell/wire-cell-toolkit/releases/tag/0.13.1][0.13.1]] which just removed some cruft
+  unintentionally left in.  They are the first release after moving
+  the toolkit source to a mono-repo assembled from the old individual
+  repos using [[https://github.com/ingydotnet/git-subrepo][git subrepo]] and includes many important algorithm
+  additions and improvements not the least of which is bringing back
+  support for multi-threaded graph execution and support for deep
+  network machine learning based signal-ROI finding.  More details
+  listed in the 0.13.0 release notes.
+
+  - Tangentially unrelated, the LArSoft source code management has
+    moved from Fermilab Redmine to https://github.com/larsoft.  It
+    now follows a fork+PR-based contribution model.
+
+- [[https://github.com/brettviren/zio][ZIO]] has matured greatly since last update but still has more to
+  come.  Since last highlight, it has gained an implementation of the
+  [[http://zguide.zeromq.org/page:all#toc211]["credit based flow control"]] protocol described in the ZeroMQ guide.
+  However, ZIO flow uses SERVER/CLIENT sockets (in draft) instead of
+  ROUTER/DEALER in order to assure thread safety if/when sockets are
+  utilized from changing threads (as will happen with TBB based
+  multi-thread graph exeuction).  ZIO now includes both C++ and Python
+  implementation of the major patterns (~message~, ~peer~, ~node~, ~port~ and
+  ~flow~).  A documentation website for [[https://brettviren.github.io/zio/][ZIO]] was started.
+
+- The WCT subpackage [[https://github.com/brettviren/wire-cell-zpb][ZPB]] was started.  It provides the WCT end of a
+  ZIO flow.  It also has a documentation home page: [[https://brettviren.github.io/wire-cell-zpb/][ZPB]].  Current ZPB
+  functionality includes extracting WCT "depo" and "frame" data types
+  from components running inside the single or multi-threaded WCT
+  graph execution engines, conversion to protobuf (the "PB" in "ZPB")
+  objects in ZIO messages, transferring them over ZIO/ZeroMQ (the "Z"
+  in "ZPB"), receiving the message in a broker and saving to HDF5.
+  Reading/injecting back into the graph is nearly complete.  The
+  broker is implemented generically in Python in the ZIO Python
+  package and ZPB provides a domain-specific "broker factory plugin"
+  which itself is plugable for both the message payload schema (but
+  limited to just protobuf format for now) and the file format (HDF5
+  implemented, ROOT maybe next).
+
 ** [2019-12-13 Fri]
 
 - DUNE DAQ is discussing software build and other software management
