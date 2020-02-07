@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-30 Thu 15:29 -->
+<!-- 2020-02-07 Fri 08:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EDG Highlights for NPPS</title>
@@ -251,9 +251,58 @@ summaries.  Less frequently updated but more focused updates on
 Wire-Cell can be found in the <a href="https://wirecell.github.io/news/">Wire-Cell News blog</a>.
 </p>
 
-<div id="outline-container-orgbd75e08" class="outline-2">
-<h2 id="orgbd75e08"><span class="section-number-2">1</span> <span class="timestamp-wrapper"><span class="timestamp">[2020-01-31 Fri]</span></span></h2>
+<div id="outline-container-org6761a50" class="outline-2">
+<h2 id="org6761a50"><span class="section-number-2">1</span> <span class="timestamp-wrapper"><span class="timestamp">[2020-02-07 Fri]</span></span></h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>ZIO is reached a milestone of functionality for its first use
+(multi-threaded file I/O) and now has a set of <a href="https://brettviren.github.io/zio/tutorial.html">tutorials</a>, one for
+each major concept.  Focus is not on the next phase which is
+providing support for CPU/GPU resource balancing brokers.  This
+started with providing back to the ZeorMQ community an <a href="https://github.com/booksbyus/zguide/commit/d1818973c6a21605c18e452a4d64c8fc8342f6a2">upgrade</a> to
+the Majordomo example from the <a href="http://zguide.zeromq.org/page:all#toc98">Zguide</a>.</li>
+
+<li>Haiwang continues his work on <a href="https://indico.bnl.gov/event/7608/contributions/34912/attachments/26525/40172/2019-02-06_Integration.pdf">DL ROI finding</a> as part of Wire-Cell
+Toolkit LArTPC signal processing.  His technique gets superior
+efficiency and purity for collecting ionization signals especially
+for difficult high-angle tracks.  Running inference on CPU takes
+about 24 s per event and on GPU about 200 ms which is now comparable
+to times required for internal data conversion.  Profiling the job
+and making some optimistic linear scaling assumptions indicate one
+GPU (2080ti) would require 2500 CPU cores running the rest of the
+WCT payload in order to balance the two resources.</li>
+
+<li>Kwang Min Yu (CSI), Haiwang and BV met to discuss Kwang Min's recent
+developments in porting parts of Wire-Cell Toolkit's drift
+simulation to GPU.  He achieves 4.7x speed increase in the code
+itself providing 2.6x speed up in the overall simulation job.  The
+code involves rastering each 2D Gaussian model of drifted ionization
+energy depositions onto a small "patch" grid and applying binomial
+fluctuations.  The next step for these patches are to sum them onto
+a larger grid and perform convolution with detector response.  This
+summing inherently resists GPU parallelism.  Kwang Min described
+possible "divide and conquer" strategies to attack this problem and
+this would be the next step but first Haiwang and BV need to "catch"
+up by understanding the GPU code and integrating it into WCT,
+proper.</li>
+
+<li>Wenqian Gu has been trying to understand potential disagreement in
+dE/dX in Wire-Cell Toolkit.  This may be usual confusion over
+Geant4's energy "deposition" vs energy "loss" or it may be some real
+problem.  The discrepancy was larger when larger max step size in
+Geant4 was used.  Going from 0.9mm to 0.3mm allows the discrepancy
+to be removed by an ad-hoc 15% "calibration".  Work is ongoing to
+understand the nature of this.</li>
+
+<li>Next week is a DUNE DAQ workshop at CERN.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgc854519" class="outline-2">
+<h2 id="orgc854519"><span class="section-number-2">2</span> <span class="timestamp-wrapper"><span class="timestamp">[2020-01-31 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Xmas/New Years and general laziness mean these updates cover more than
 one week of activity.
@@ -303,9 +352,9 @@ implemented, ROOT maybe next).</li>
 </div>
 </div>
 
-<div id="outline-container-orgac884bb" class="outline-2">
-<h2 id="orgac884bb"><span class="section-number-2">2</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-13 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orge141186" class="outline-2">
+<h2 id="orge141186"><span class="section-number-2">3</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-13 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>DUNE DAQ is discussing software build and other software management
 issues.  FNAL is trying to replace their long standing "augmented"
@@ -328,9 +377,9 @@ welcome.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb38c94f" class="outline-2">
-<h2 id="orgb38c94f"><span class="section-number-2">3</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-06 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org86ecae1" class="outline-2">
+<h2 id="org86ecae1"><span class="section-number-2">4</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-06 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
 BV and Haiwang met with CSI (Meifeng, Kwangmin, Zhihua) yesterday to
@@ -384,9 +433,9 @@ can be developed entirely using PTMP based code.</li>
 </div>
 </div>
 
-<div id="outline-container-org44138bc" class="outline-2">
-<h2 id="org44138bc"><span class="section-number-2">4</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-22 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgdd58c12" class="outline-2">
+<h2 id="orgdd58c12"><span class="section-number-2">5</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-22 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><p>
 DUNE computing issued a charge for a "DUNE Software Framework
@@ -425,9 +474,9 @@ something we should look into more.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcfc3100" class="outline-2">
-<h2 id="orgcfc3100"><span class="section-number-2">5</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-15 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org65e70c0" class="outline-2">
+<h2 id="org65e70c0"><span class="section-number-2">6</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-15 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="https://indico.bnl.gov/event/6383/contributions/32818/attachments/25515/38251/srv-dune-fd-daq-bv.pdf">DUNE DAQ at SRV</a> describes the prototype streaming trigger/readout software and some results of <a href="https://github.com/brettviren/zperfmq">ZeroMQ performance</a> on 100 Gbps ATLAS/DUNE/sPHENIX LDRD test network.</li>
 
@@ -444,7 +493,7 @@ something we should look into more.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Brett Viren</p>
-<p class="date">Created: 2020-01-30 Thu 15:29</p>
+<p class="date">Created: 2020-02-07 Fri 08:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

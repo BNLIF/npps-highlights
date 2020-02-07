@@ -6,6 +6,50 @@ by EDG members that may be interesting to NPPS.  Below are weekly
 summaries.  Less frequently updated but more focused updates on
 Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News blog]].
 
+* [2020-02-07 Fri]
+
+- ZIO is reached a milestone of functionality for its first use
+  (multi-threaded file I/O) and now has a set of [[https://brettviren.github.io/zio/tutorial.html][tutorials]], one for
+  each major concept.  Focus is not on the next phase which is
+  providing support for CPU/GPU resource balancing brokers.  This
+  started with providing back to the ZeorMQ community an [[https://github.com/booksbyus/zguide/commit/d1818973c6a21605c18e452a4d64c8fc8342f6a2][upgrade]] to
+  the Majordomo example from the [[http://zguide.zeromq.org/page:all#toc98][Zguide]].
+
+- Haiwang continues his work on [[https://indico.bnl.gov/event/7608/contributions/34912/attachments/26525/40172/2019-02-06_Integration.pdf][DL ROI finding]] as part of Wire-Cell
+  Toolkit LArTPC signal processing.  His technique gets superior
+  efficiency and purity for collecting ionization signals especially
+  for difficult high-angle tracks.  Running inference on CPU takes
+  about 24 s per event and on GPU about 200 ms which is now comparable
+  to times required for internal data conversion.  Profiling the job
+  and making some optimistic linear scaling assumptions indicate one
+  GPU (2080ti) would require 2500 CPU cores running the rest of the
+  WCT payload in order to balance the two resources.
+
+- Kwang Min Yu (CSI), Haiwang and BV met to discuss Kwang Min's recent
+  developments in porting parts of Wire-Cell Toolkit's drift
+  simulation to GPU.  He achieves 4.7x speed increase in the code
+  itself providing 2.6x speed up in the overall simulation job.  The
+  code involves rastering each 2D Gaussian model of drifted ionization
+  energy depositions onto a small "patch" grid and applying binomial
+  fluctuations.  The next step for these patches are to sum them onto
+  a larger grid and perform convolution with detector response.  This
+  summing inherently resists GPU parallelism.  Kwang Min described
+  possible "divide and conquer" strategies to attack this problem and
+  this would be the next step but first Haiwang and BV need to "catch"
+  up by understanding the GPU code and integrating it into WCT,
+  proper.
+
+- Wenqian Gu has been trying to understand potential disagreement in
+  dE/dX in Wire-Cell Toolkit.  This may be usual confusion over
+  Geant4's energy "deposition" vs energy "loss" or it may be some real
+  problem.  The discrepancy was larger when larger max step size in
+  Geant4 was used.  Going from 0.9mm to 0.3mm allows the discrepancy
+  to be removed by an ad-hoc 15% "calibration".  Work is ongoing to
+  understand the nature of this.
+
+- Next week is a DUNE DAQ workshop at CERN.
+
+
 * [2020-01-31 Fri]
 
 Xmas/New Years and general laziness mean these updates cover more than
