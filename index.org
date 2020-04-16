@@ -1,10 +1,113 @@
 #+title: EDG Highlights for NPPS
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org.css"/>
+#+AUTHOR: Brett Viren
+#+EMAIL: brett.viren@gmail.com
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: setup/theme-readtheorg-local.setup
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style>
 
 This page attempts to collect highlights of software-related activity
 by EDG members that may be interesting to NPPS.  Below are weekly
 summaries.  Less frequently updated but more focused updates on
 Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News blog]].
+
+#+begin_note
+All EDG members are welcome to contribute directly to this list,
+although probably all these words are from ~bv@bnl.gov~ and thus biased
+by my viewpoint.  If others wish to contribute, let's do something to
+accommodate that.
+#+end_note
+
+* [2020-04-16 Thu]
+
+It's been a couple months since the last update, what with the world
+as we know it changing.  In no particular order, here are some
+software-related things that have happened in that time:
+
+- Added a general purpose tensor data type to WCT ([[https://github.com/WireCell/wire-cell-toolkit/blob/master/iface/inc/WireCellIface/ITensor.h][~ITensor~]] and
+  [[https://github.com/WireCell/wire-cell-toolkit/blob/master/iface/inc/WireCellIface/ITensorSet.h][~ITensorSet~]]) and an extension to a ZIO message form called TENS
+  ([[https://github.com/brettviren/zio/blob/master/inc/zio/tens.hpp][C++ util]]) which is compatible with FLOW forms.  The object schema
+  takes guidance from Eigen3, ~boost::multiarray~ and HDF5 and so allows
+  "impedance matched" conversion between these implementations.
+
+- Upgraded the C++ implementation of ZIO flow protocol to use an
+  explicit finite state machine.  The motivation was that the
+  hand-rolled FSM of if/else branches was getting crazy.  It makes use
+  of [[https://boost-experimental.github.io/sml/][boost.sml]]. Here is a [[https://brettviren.github.io/zio/flowsm.png][state diagram]] semi-automatically generated
+  from ~boost.sml~
+
+- Moved ZIO to use [[https://github.com/gabime/spdlog][spdlog]] to help compatibility for WCT integration.
+
+- After a long and very helpful discussion in the [[https://github.com/zeromq/cppzmq/pull/391][pull request]] I
+  contributed an implementation of the CZMQ message codec to cppzmq.
+  There is another [[https://github.com/zeromq/cppzmq/pull/392][open PR]] to add an implementation of the "actor
+  pattern" (influenced by CZMQ).  After another long and useful
+  discussion there, it may be rescinded and in any case is in limbo.
+  A version of the actor is in ZIO.
+
+- Created [[https://github.com/brettviren/generaldomo][generaldomo]] C++ and Python which is a generalization of
+  ZeroMQ Majordomo (v1) protocol and reference implementation from the
+  Zguide so that it may thread safe CLIENT/SERVER as well as
+  traditional DEALER/ROUTER sockets.  This work required/inspired the
+  contribution of the codec to cppzmq.
+
+- Integrated a variant of generaldomo's into ZIO as "domo".  This
+  forms the basis for the WCT/ZIO/PyTorch GPU service.
+
+- Started ZIO integration into WCT for HDF5 I/O and GPU service
+  support.  This is organized through WireCell GitHub [[https://github.com/WireCell/wire-cell-toolkit/projects/8][project/8]].  The
+  FSM upgrade is part of [[https://github.com/WireCell/wire-cell-toolkit/issues/54][issue/54]].
+
+- Various cleanups in WCT build system, now with auto-generated
+  [[https://github.com/WireCell/wire-cell-toolkit/raw/master/wct-deps.png][dependency tree GraphViz diagram]]. 
+
+- In DUNE FD DAQ we had a +fight over+ discussion about whether to adopt
+  a distributed vs a centralize philosophy, with me on the side of the
+  former.  It was agreed to do a demo of each approach to compare the
+  performance of two.  I wrote one in a few hours leveraging ZIO.  I
+  have a [[https://brettviren.github.io/zio/ex-distribution.html][write up]] on my demo that shows how to exercise it.  Meanwhile
+  the centralized proponents haven't even answered any of my email
+  about this.  The DUNE DAQ consortium can be a rather frustrating
+  "collaboration".
+
+- Speaking of DUNE DAQ, an "application framework" task force was
+  started at the CERN DAQ workshop.  It is roughly centered on two
+  GitHub repos [[https://github.com/DUNE-DAQ/app-framework-base][app-framework-base]] and [[https://github.com/DUNE-DAQ/app-framework][app-framework]].  The effort here
+  so far largely ignores the lessons learned and software technology
+  developed in PTMP which brought self-trigging to ProtoDUNE.
+  Frustrating.  Instead a rather centralized and "offline" approach is
+  being pursued.  More frustration.
+
+- Last weekend I wrote a "tour" of ZeroMQ's C++ API.  It's currently
+  served from: https://brettviren.github.io/cppzmq-tour/ and we may
+  integrate it into ZeroMQ more closely.
+
+- Haiwang has advanced his DL signal-ROI finder, testing different
+  networks.  Looking at some stability issues in the loss function on
+  corner case events and if they are driven by how the training sample
+  phase space is populated.
+
+- Haiwang has joined the HEP-CCE PPS effort to port bottleneck
+  algorithms to use [[https://kokkos.org/][Kokkos]] for portable cpu/gpu/etc parallel
+  algorithms.  We have also met with BNL CSI and Kyle Knoepfel (FNAL
+  art developer) on how HEP-CCE activities will progress.  The
+  decision is that we focus on WCT simulation algorithms for porting
+  to Kokkos.  And, for now, will do development using a job that runs
+  WCT on top of art/larsoft.  This will immediately allow a vector to
+  get rich sets of Geant4 energy depositions into the WCT simulation.
+  It will also allow the Kokkos work to later run in a more stripped
+  down and HPC-friendly way through stand-alone WCT.
+
+- Wenqian and Andrea added initial support to WCT for ICARUS including
+  noise filtering and coherent noise model for the simulation.  This
+  latter improved WCT to make the previously hard-coded
+  cold-electronics response function be dynamically replaceable to
+  accomodate the warm electronics response used by ICARUS.
+
+- Haiwang began the much anticipated refactoring of the signal
+  processing which will give better code modularity and finer grained
+  parallel processing.
 
 * [2020-02-07 Fri]
 
@@ -12,7 +115,7 @@ Wire-Cell can be found in the [[https://wirecell.github.io/news/][Wire-Cell News
   (multi-threaded file I/O) and now has a set of [[https://brettviren.github.io/zio/tutorial.html][tutorials]], one for
   each major concept.  Focus is not on the next phase which is
   providing support for CPU/GPU resource balancing brokers.  This
-  started with providing back to the ZeorMQ community an [[https://github.com/booksbyus/zguide/commit/d1818973c6a21605c18e452a4d64c8fc8342f6a2][upgrade]] to
+  started with providing back to the ZeroMQ community an [[https://github.com/booksbyus/zguide/commit/d1818973c6a21605c18e452a4d64c8fc8342f6a2][upgrade]] to
   the Majordomo example from the [[http://zguide.zeromq.org/page:all#toc98][Zguide]].
 
 - Haiwang continues his work on [[https://indico.bnl.gov/event/7608/contributions/34912/attachments/26525/40172/2019-02-06_Integration.pdf][DL ROI finding]] as part of Wire-Cell

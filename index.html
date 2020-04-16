@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 08:44 -->
+<!-- 2020-04-16 Thu 10:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EDG Highlights for NPPS</title>
@@ -193,13 +193,21 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="org.css"/>
+<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="styles/readtheorg/css/readtheorg.css"/>
+<script type="text/javascript" src="styles/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="styles/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="styles/readtheorg/js/readtheorg.js"></script>
+<style> #content{max-width:1800px;}</style>
+<style> p{max-width:800px;}</style>
+<style> li{max-width:800px;}</style>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -244,6 +252,20 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">EDG Highlights for NPPS</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgc556c47"><span class="timestamp-wrapper"><span class="timestamp">[2020-04-16 Thu]</span></span></a></li>
+<li><a href="#orged5dffc"><span class="timestamp-wrapper"><span class="timestamp">[2020-02-07 Fri]</span></span></a></li>
+<li><a href="#org433aa8f"><span class="timestamp-wrapper"><span class="timestamp">[2020-01-31 Fri]</span></span></a></li>
+<li><a href="#org8ee7791"><span class="timestamp-wrapper"><span class="timestamp">[2019-12-13 Fri]</span></span></a></li>
+<li><a href="#orgc5632bf"><span class="timestamp-wrapper"><span class="timestamp">[2019-12-06 Fri]</span></span></a></li>
+<li><a href="#org85d8854"><span class="timestamp-wrapper"><span class="timestamp">[2019-11-22 Fri]</span></span></a></li>
+<li><a href="#orga3f485d"><span class="timestamp-wrapper"><span class="timestamp">[2019-11-15 Fri]</span></span></a></li>
+</ul>
+</div>
+</div>
 <p>
 This page attempts to collect highlights of software-related activity
 by EDG members that may be interesting to NPPS.  Below are weekly
@@ -251,15 +273,122 @@ summaries.  Less frequently updated but more focused updates on
 Wire-Cell can be found in the <a href="https://wirecell.github.io/news/">Wire-Cell News blog</a>.
 </p>
 
-<div id="outline-container-org6761a50" class="outline-2">
-<h2 id="org6761a50"><span class="section-number-2">1</span> <span class="timestamp-wrapper"><span class="timestamp">[2020-02-07 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div class="note">
+<p>
+All EDG members are welcome to contribute directly to this list,
+although probably all these words are from <code>bv@bnl.gov</code> and thus biased
+by my viewpoint.  If others wish to contribute, let's do something to
+accommodate that.
+</p>
+
+</div>
+
+<div id="outline-container-orgc556c47" class="outline-2">
+<h2 id="orgc556c47"><span class="timestamp-wrapper"><span class="timestamp">[2020-04-16 Thu]</span></span></h2>
+<div class="outline-text-2" id="text-orgc556c47">
+<p>
+It's been a couple months since the last update, what with the world
+as we know it changing.  In no particular order, here are some
+software-related things that have happened in that time:
+</p>
+
+<ul class="org-ul">
+<li>Added a general purpose tensor data type to WCT (<a href="https://github.com/WireCell/wire-cell-toolkit/blob/master/iface/inc/WireCellIface/ITensor.h"><code>ITensor</code></a> and
+<a href="https://github.com/WireCell/wire-cell-toolkit/blob/master/iface/inc/WireCellIface/ITensorSet.h"><code>ITensorSet</code></a>) and an extension to a ZIO message form called TENS
+(<a href="https://github.com/brettviren/zio/blob/master/inc/zio/tens.hpp">C++ util</a>) which is compatible with FLOW forms.  The object schema
+takes guidance from Eigen3, <code>boost::multiarray</code> and HDF5 and so allows
+"impedance matched" conversion between these implementations.</li>
+
+<li>Upgraded the C++ implementation of ZIO flow protocol to use an
+explicit finite state machine.  The motivation was that the
+hand-rolled FSM of if/else branches was getting crazy.  It makes use
+of <a href="https://boost-experimental.github.io/sml/">boost.sml</a>. Here is a <a href="https://brettviren.github.io/zio/flowsm.png">state diagram</a> semi-automatically generated
+from <code>boost.sml</code></li>
+
+<li>Moved ZIO to use <a href="https://github.com/gabime/spdlog">spdlog</a> to help compatibility for WCT integration.</li>
+
+<li>After a long and very helpful discussion in the <a href="https://github.com/zeromq/cppzmq/pull/391">pull request</a> I
+contributed an implementation of the CZMQ message codec to cppzmq.
+There is another <a href="https://github.com/zeromq/cppzmq/pull/392">open PR</a> to add an implementation of the "actor
+pattern" (influenced by CZMQ).  After another long and useful
+discussion there, it may be rescinded and in any case is in limbo.
+A version of the actor is in ZIO.</li>
+
+<li>Created <a href="https://github.com/brettviren/generaldomo">generaldomo</a> C++ and Python which is a generalization of
+ZeroMQ Majordomo (v1) protocol and reference implementation from the
+Zguide so that it may thread safe CLIENT/SERVER as well as
+traditional DEALER/ROUTER sockets.  This work required/inspired the
+contribution of the codec to cppzmq.</li>
+
+<li>Integrated a variant of generaldomo's into ZIO as "domo".  This
+forms the basis for the WCT/ZIO/PyTorch GPU service.</li>
+
+<li>Started ZIO integration into WCT for HDF5 I/O and GPU service
+support.  This is organized through WireCell GitHub <a href="https://github.com/WireCell/wire-cell-toolkit/projects/8">project/8</a>.  The
+FSM upgrade is part of <a href="https://github.com/WireCell/wire-cell-toolkit/issues/54">issue/54</a>.</li>
+
+<li>Various cleanups in WCT build system, now with auto-generated
+<a href="https://github.com/WireCell/wire-cell-toolkit/raw/master/wct-deps.png">dependency tree GraphViz diagram</a>.</li>
+
+<li>In DUNE FD DAQ we had a <del>fight over</del> discussion about whether to adopt
+a distributed vs a centralize philosophy, with me on the side of the
+former.  It was agreed to do a demo of each approach to compare the
+performance of two.  I wrote one in a few hours leveraging ZIO.  I
+have a <a href="https://brettviren.github.io/zio/ex-distribution.html">write up</a> on my demo that shows how to exercise it.  Meanwhile
+the centralized proponents haven't even answered any of my email
+about this.  The DUNE DAQ consortium can be a rather frustrating
+"collaboration".</li>
+
+<li>Speaking of DUNE DAQ, an "application framework" task force was
+started at the CERN DAQ workshop.  It is roughly centered on two
+GitHub repos <a href="https://github.com/DUNE-DAQ/app-framework-base">app-framework-base</a> and <a href="https://github.com/DUNE-DAQ/app-framework">app-framework</a>.  The effort here
+so far largely ignores the lessons learned and software technology
+developed in PTMP which brought self-trigging to ProtoDUNE.
+Frustrating.  Instead a rather centralized and "offline" approach is
+being pursued.  More frustration.</li>
+
+<li>Last weekend I wrote a "tour" of ZeroMQ's C++ API.  It's currently
+served from: <a href="https://brettviren.github.io/cppzmq-tour/">https://brettviren.github.io/cppzmq-tour/</a> and we may
+integrate it into ZeroMQ more closely.</li>
+
+<li>Haiwang has advanced his DL signal-ROI finder, testing different
+networks.  Looking at some stability issues in the loss function on
+corner case events and if they are driven by how the training sample
+phase space is populated.</li>
+
+<li>Haiwang has joined the HEP-CCE PPS effort to port bottleneck
+algorithms to use <a href="https://kokkos.org/">Kokkos</a> for portable cpu/gpu/etc parallel
+algorithms.  We have also met with BNL CSI and Kyle Knoepfel (FNAL
+art developer) on how HEP-CCE activities will progress.  The
+decision is that we focus on WCT simulation algorithms for porting
+to Kokkos.  And, for now, will do development using a job that runs
+WCT on top of art/larsoft.  This will immediately allow a vector to
+get rich sets of Geant4 energy depositions into the WCT simulation.
+It will also allow the Kokkos work to later run in a more stripped
+down and HPC-friendly way through stand-alone WCT.</li>
+
+<li>Wenqian and Andrea added initial support to WCT for ICARUS including
+noise filtering and coherent noise model for the simulation.  This
+latter improved WCT to make the previously hard-coded
+cold-electronics response function be dynamically replaceable to
+accomodate the warm electronics response used by ICARUS.</li>
+
+<li>Haiwang began the much anticipated refactoring of the signal
+processing which will give better code modularity and finer grained
+parallel processing.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orged5dffc" class="outline-2">
+<h2 id="orged5dffc"><span class="timestamp-wrapper"><span class="timestamp">[2020-02-07 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-orged5dffc">
 <ul class="org-ul">
 <li>ZIO is reached a milestone of functionality for its first use
 (multi-threaded file I/O) and now has a set of <a href="https://brettviren.github.io/zio/tutorial.html">tutorials</a>, one for
 each major concept.  Focus is not on the next phase which is
 providing support for CPU/GPU resource balancing brokers.  This
-started with providing back to the ZeorMQ community an <a href="https://github.com/booksbyus/zguide/commit/d1818973c6a21605c18e452a4d64c8fc8342f6a2">upgrade</a> to
+started with providing back to the ZeroMQ community an <a href="https://github.com/booksbyus/zguide/commit/d1818973c6a21605c18e452a4d64c8fc8342f6a2">upgrade</a> to
 the Majordomo example from the <a href="http://zguide.zeromq.org/page:all#toc98">Zguide</a>.</li>
 
 <li>Haiwang continues his work on <a href="https://indico.bnl.gov/event/7608/contributions/34912/attachments/26525/40172/2019-02-06_Integration.pdf">DL ROI finding</a> as part of Wire-Cell
@@ -300,9 +429,9 @@ understand the nature of this.</li>
 </div>
 
 
-<div id="outline-container-orgc854519" class="outline-2">
-<h2 id="orgc854519"><span class="section-number-2">2</span> <span class="timestamp-wrapper"><span class="timestamp">[2020-01-31 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org433aa8f" class="outline-2">
+<h2 id="org433aa8f"><span class="timestamp-wrapper"><span class="timestamp">[2020-01-31 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-org433aa8f">
 <p>
 Xmas/New Years and general laziness mean these updates cover more than
 one week of activity.
@@ -352,9 +481,9 @@ implemented, ROOT maybe next).</li>
 </div>
 </div>
 
-<div id="outline-container-orge141186" class="outline-2">
-<h2 id="orge141186"><span class="section-number-2">3</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-13 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org8ee7791" class="outline-2">
+<h2 id="org8ee7791"><span class="timestamp-wrapper"><span class="timestamp">[2019-12-13 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-org8ee7791">
 <ul class="org-ul">
 <li>DUNE DAQ is discussing software build and other software management
 issues.  FNAL is trying to replace their long standing "augmented"
@@ -377,9 +506,9 @@ welcome.</li>
 </div>
 </div>
 
-<div id="outline-container-org86ecae1" class="outline-2">
-<h2 id="org86ecae1"><span class="section-number-2">4</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-12-06 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgc5632bf" class="outline-2">
+<h2 id="orgc5632bf"><span class="timestamp-wrapper"><span class="timestamp">[2019-12-06 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-orgc5632bf">
 <ul class="org-ul">
 <li><p>
 BV and Haiwang met with CSI (Meifeng, Kwangmin, Zhihua) yesterday to
@@ -433,9 +562,9 @@ can be developed entirely using PTMP based code.</li>
 </div>
 </div>
 
-<div id="outline-container-orgdd58c12" class="outline-2">
-<h2 id="orgdd58c12"><span class="section-number-2">5</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-22 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org85d8854" class="outline-2">
+<h2 id="org85d8854"><span class="timestamp-wrapper"><span class="timestamp">[2019-11-22 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-org85d8854">
 <ul class="org-ul">
 <li><p>
 DUNE computing issued a charge for a "DUNE Software Framework
@@ -474,9 +603,9 @@ something we should look into more.</li>
 </div>
 </div>
 
-<div id="outline-container-org65e70c0" class="outline-2">
-<h2 id="org65e70c0"><span class="section-number-2">6</span> <span class="timestamp-wrapper"><span class="timestamp">[2019-11-15 Fri]</span></span></h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orga3f485d" class="outline-2">
+<h2 id="orga3f485d"><span class="timestamp-wrapper"><span class="timestamp">[2019-11-15 Fri]</span></span></h2>
+<div class="outline-text-2" id="text-orga3f485d">
 <ul class="org-ul">
 <li><a href="https://indico.bnl.gov/event/6383/contributions/32818/attachments/25515/38251/srv-dune-fd-daq-bv.pdf">DUNE DAQ at SRV</a> describes the prototype streaming trigger/readout software and some results of <a href="https://github.com/brettviren/zperfmq">ZeroMQ performance</a> on 100 Gbps ATLAS/DUNE/sPHENIX LDRD test network.</li>
 
@@ -493,7 +622,7 @@ something we should look into more.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Brett Viren</p>
-<p class="date">Created: 2020-02-07 Fri 08:44</p>
+<p class="date">Created: 2020-04-16 Thu 10:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
